@@ -1,2 +1,2 @@
 # test-package-labs
--new Change
+- new Change
