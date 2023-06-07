@@ -4,5 +4,6 @@ module.exports = async function getContests() {
     .get(
       "https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies.json"
     )
+  console.log(data)
   return data
 };
