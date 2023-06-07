@@ -1,3 +1,15 @@
+# v1.0.6 (Wed Jun 07 2023)
+
+#### ⚠️ Pushed to `main`
+
+- upadted github action 1 ([@SaadFarooq-Dev](https://github.com/SaadFarooq-Dev))
+
+#### Authors: 1
+
+- Saad Farooq ([@SaadFarooq-Dev](https://github.com/SaadFarooq-Dev))
+
+---
+
 # v1.0.5 (Wed Jun 07 2023)
 
 #### 🐛 Bug Fix
