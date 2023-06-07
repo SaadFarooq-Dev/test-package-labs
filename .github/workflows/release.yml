@@ -2,8 +2,10 @@
 name: Release
 
 # The event that will trigger the action
-on: push
-# what the action will do
+on:
+  push:
+    branches:
+      - main
 jobs:
   release:
     # The operating system it will run on
