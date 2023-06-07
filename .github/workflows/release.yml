@@ -6,8 +6,6 @@ on:
   push:
     branches:
       - main
-    paths:
-      - '/'
 jobs:
   release:
     # The operating system it will run on
@@ -23,17 +21,18 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: '16'
-      - name: Cache node modules
-        uses: actions/cache@v2
-        id: cache-primes
-        with:
-          path: node_modules
-          key: npm-deps-${{ hashFiles('package-lock.json') }}
-          restore-keys: npm-deps-${{ hashFiles('package-lock.json') }}
+          registry-url: https://registry.npmjs.org/
+      # - name: Cache node modules
+      #   uses: actions/cache@v2
+      #   with:
+      #     path: node_modules
+      #     key: npm-deps-${{ hashFiles('package-lock.json') }}
+      #     restore-keys: |
+      #       npm-deps-${{ hashFiles('package-lock.json') }}
       - name: Create Release
         env:
           GITHUB_TOKEN: ${{secrets.GH_TOKEN}}
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run:
+        run: |
           npm ci --legacy-peer-deps
           npx auto shipit
